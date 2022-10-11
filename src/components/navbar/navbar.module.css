@@ -1,0 +1,59 @@
+.Navbar {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     margin: 2% 2% 0 2%;
+}
+
+.Logo {
+     width: 211px;
+}
+
+.NavbarItems {
+     position: relative;
+}
+
+.NavbarItems .link {
+     text-decoration: none;
+     color: #FF6060;
+     font-size: 24px;
+     padding-left: 10px;
+     padding-right: 10px;
+     --b: 0.1em;   /* the thickness of the line */
+     --c: #FF6060; /* the color */	
+     padding-block: var(--b);
+     background: 
+       linear-gradient(var(--c) 50%,rgb(172, 22, 22) 0) 0% calc(100% - var(--_p,0%))/100% 200%,
+       linear-gradient(var(--c) 0 0) 0% var(--_p,0%)/var(--_p,0%) var(--b) no-repeat;
+     -webkit-background-clip: text,padding-box;
+             background-clip: text,padding-box;
+     transition: .3s var(--_s,0s) linear,background-size .3s calc(.3s - var(--_s,0s));
+}
+.NavbarItems a:hover {
+     --_p: 100%;
+     --_s: .3s;
+     color: black;
+     
+}
+
+/* respondiv tablette */
+@media screen and (max-width: 768px) {
+     .Navbar {
+          margin: 0;
+     }
+     .NavbarItems a {
+          font-size: 18px;
+     }
+}
+
+/* responsive mobile */
+@media screen and (max-width: 480px) {
+     .NavbarItems a {
+          font-size: 14px;
+          text-transform: uppercase;
+          font-weight: 500;
+          padding-left: 5px;
+          padding-right: 5px;	
+     }
+}
+

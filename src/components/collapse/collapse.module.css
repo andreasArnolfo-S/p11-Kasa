@@ -1,0 +1,65 @@
+.Collap {
+     display: flex;
+}
+.Collapse {
+     margin: 2% 2% 0 2%;
+     width: 45%;
+}
+
+.collapsible {
+     background-color: #FF6060;
+     border: none;
+     width: 100%;
+     padding-top: 10px;
+     padding-bottom: 10px;
+     color: #fff;
+     text-align: left;
+     font-size: 24px;
+     border-radius: 15px;
+     padding-left: 20px;
+}
+
+.contentCollapsible {
+     background-color: #F7F7F7;
+     border-radius: 0 0 15px 15px;
+     padding: 20px;
+     color: #FF6060;
+     height: 250px;
+}
+.contentCollapsible p{
+     margin: 0;
+     font-size: 20px;
+}
+.iconDown {
+     float: right;
+     margin-right: 20px;
+}
+li {
+     font-size: 20px;
+}
+
+/* respondiv tablette */
+@media screen and (max-width: 868px) {
+     .Collap {
+          flex-direction: column;
+          margin-right: 4%;
+     }
+     .Collapse {
+          width: 100%;
+     }
+     .contentCollapsible {
+          height: 200px;
+     }
+}
+/* responsive mobile */
+@media screen and (max-width: 480px) {
+     .Collap {
+          flex-direction: column;
+     }
+     .Collapse {
+          width: 100%;
+     }
+     .contentCollapsible {
+          height: 200px;
+     }
+}
