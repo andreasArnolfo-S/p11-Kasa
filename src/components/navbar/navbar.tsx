@@ -3,9 +3,17 @@ import styles from "./navbar.module.css";
 import { NavLink } from 'react-router-dom';
 
 interface NavbarProps {
- }
+}
 
 const Navbar: FC<NavbarProps> = () => {
+
+	let activeStyle = {
+		textDecoration: "underline",
+	};
+
+	let unactiveStyle = {
+		textDecoration: "none",
+	};
 
 	return (
 		<div className={styles.Navbar}>
@@ -15,18 +23,15 @@ const Navbar: FC<NavbarProps> = () => {
 				alt="logo"
 			></img>
 			<div className={styles.NavbarItems}>
-				<NavLink to="/" style={({isActive}) => {
-					return {
-						textDecorationLine: isActive ? 'underline' : 'none'
-					}
-				}}>
+				<NavLink to="/" style={({ isActive }) =>
+					isActive ? activeStyle : unactiveStyle
+				}
+				end>
 					Accueil
 				</NavLink>
-				<NavLink to="/about" style={({isActive}) => {
-					return {
-						textDecorationLine: isActive ? 'underline' : 'none'
-					}
-				}}>
+				<NavLink to="about" style={({ isActive }) =>
+					isActive ? activeStyle : unactiveStyle
+				}>
 					A Propos
 				</NavLink>
 			</div>
