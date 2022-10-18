@@ -34,7 +34,6 @@
 /* respondiv tablette */
 @media screen and (max-width: 868px) {
      .Card {
-          width: 45%;
           flex-basis: 45%;
      }
 }
@@ -44,5 +43,9 @@
           width: 100%;
           flex-basis: 100%;
           border-radius: 15px;
+          max-height: 300px;
+     }
+     .Card img {
+          height: 350px;
      }
 }

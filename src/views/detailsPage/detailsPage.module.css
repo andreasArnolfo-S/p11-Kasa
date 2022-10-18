@@ -1,4 +1,4 @@
-.logement_info {
+.logement_infos {
      display: flex;
      justify-content: space-between;
      align-items: center;
@@ -20,6 +20,7 @@
 .logement_profil {
      display: flex;
      align-items: center;
+     margin-top: 5%;
 }
 
 .logement_profil p {
@@ -35,16 +36,11 @@
      width: 100px;
 }
 
-.logement_tags_rates {
-     display: flex;
-     align-items: center;
-     justify-content: space-between;
-     margin: 2% 2% 0 2%;
-}
 .logement_tags {
      display: flex;
      align-items: center;
      gap: 10px;
+     margin-top: 5%;
 }
 .logement_tags p {
      background-color: #FF6060;
@@ -56,12 +52,73 @@
 }
 .StarYellow {
      color: #FF6060;
-     font-size: 24px;
+     font-size: 28px;
 
 }
 .StarEmpty {
      color: #464646;
      opacity: 0.5;
-     font-size: 24px;
+     font-size: 28px;
+}
+.logement_description {
+     display: flex;
 }
 
+.logement_rates {
+     display: flex;
+     flex-direction: column;
+     align-items: flex-end;
+     width: 100%;
+     margin-top: 5%;
+}
+
+/* responsiv mobile */
+@media screen and (max-width: 480px) {
+     .logement_description {
+          flex-direction: column;
+          margin-right: 4%;
+          margin-top: 5%;
+     }
+     .logement_infos {
+          flex-direction: column;
+     }
+     .logement_info_title_and_tags{
+          width: 100%;
+     }
+     .logement_info_title h1 {
+          font-size: 24px;
+     }
+     .logement_info_title p {
+          font-size: 18px;
+     }
+     .logement_tags{
+          flex-wrap: wrap;
+     }
+     .logement_tags p {
+          font-size: 16px;
+          white-space: nowrap;
+     }
+     .logement_profil_and_rates {
+          display: flex;
+          flex-direction: row-reverse;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+     }
+     .logement_rates {
+          align-items: flex-start;
+     }
+     .logement_profil img {
+          width: 80px;
+     }
+     .logement_profil p {
+          font-size: 20px;
+          text-align: right;
+     }
+     .StarYellow {
+          font-size: 20px;
+     }
+     .StarEmpty {
+          font-size: 20px;
+     }
+}

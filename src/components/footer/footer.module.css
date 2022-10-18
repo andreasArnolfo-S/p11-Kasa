@@ -12,3 +12,18 @@
      width: 200px;
      margin-top: 5%;
 }
+
+/* responsive */
+@media screen and (max-width: 868px) {
+     .footer_logo {
+          width: 150px;
+     }
+}
+@media screen and (max-width: 480px) {
+     .footer_logo {
+          width: 100px;
+     }
+     .Footer {
+          height: 150px;
+     }
+}

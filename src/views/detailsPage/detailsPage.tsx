@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import Collapse from "../../components/collapse/collapse";
 
-interface DetailsPageProps {}
+interface DetailsPageProps { }
 
 const DetailsPage: FC<DetailsPageProps> = () => {
 	/* Il récupère l'identifiant du logement actuel à partir de l'url puis filtre les données pour obtenir
@@ -49,30 +49,35 @@ const DetailsPage: FC<DetailsPageProps> = () => {
 	return (
 		<div className={styles.DetailsPage}>
 			<Carousel picture={e.pictures} />
-			<section className={styles.logement_info}>
-				<div className={styles.logement_info_title}>
-					<h1>{e.title}</h1>
-					<p>{e.location}</p>
+			<section className={styles.logement_infos}>
+				<div className={styles.logement_info_title_and_tags}>
+					<div className={styles.logement_info_title}>
+						<h1>{e.title}</h1>
+						<p>{e.location}</p>
+					</div>
+					<div className={styles.logement_tags}>
+						{e.tags.map((e) => (
+							<p key={e.toString()}>{e}</p>
+						))}
+					</div>
 				</div>
-				<div className={styles.logement_profil}>
-					<p>{e.host.name}</p>
-					<img
-						src={e.host.picture}
-						alt={e.host.name}
-					/>
+				<div className={styles.logement_profil_and_rates}>
+					<div className={styles.logement_profil}>
+						<p>{e.host.name}</p>
+						<img
+							src={e.host.picture}
+							alt={e.host.name}
+						/>
+					</div>
+					<div className={styles.logement_rates}>
+						<p>{stars()}</p>
+					</div>
 				</div>
 			</section>
-			<section className={styles.logement_tags_rates}>
-				<div className={styles.logement_tags}>
-					{e.tags.map((e) => (
-						<p key={e.toString()}>{e}</p>
-					))}
-				</div>
-				<div className={styles.logement_rates}>
-					<p>{stars()}</p>
-				</div>
+			<section className={styles.logement_description}>
+				<Collapse t='Description' content={e.description} />
+				<Collapse t='Equipements' equipments={e.equipments} />
 			</section>
-			<Collapse {...e}/>
 		</div>
 	);
 };

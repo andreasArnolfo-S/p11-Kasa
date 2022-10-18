@@ -1,9 +1,6 @@
-.Collap {
-     display: flex;
-}
 .Collapse {
      margin: 2% 2% 0 2%;
-     width: 45%;
+     width: 50%;
 }
 
 .collapsible {
@@ -53,13 +50,20 @@ li {
 }
 /* responsive mobile */
 @media screen and (max-width: 480px) {
-     .Collap {
-          flex-direction: column;
-     }
+
      .Collapse {
           width: 100%;
      }
      .contentCollapsible {
-          height: 200px;
+          height: auto;
+     }
+     .contentCollapsible p {
+          font-size: 18px;
+     }
+     .contentCollapsible p li{
+          font-size: 18px;
+     }
+     .collapsible {
+          font-size: 18px;
      }
 }
