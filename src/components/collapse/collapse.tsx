@@ -36,7 +36,7 @@ const Collapse: FC<CollapseProps> = (e) => {
 						: { display: "block" }
 				}
 			>
-				<p>{e.t === 'Equipements' ? e.equipments!.map((el) => <li>{el}</li>) : e.content}</p>
+				<p>{e.t === 'Equipements' ? e.equipments!.map((el) => <li key={el}>{el}</li>) : e.content}</p>
 			</div>
 		</div>
 	);

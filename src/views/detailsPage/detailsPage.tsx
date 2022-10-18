@@ -6,7 +6,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import Collapse from "../../components/collapse/collapse";
 
-interface DetailsPageProps { }
+interface DetailsPageProps {
+
+ }
 
 const DetailsPage: FC<DetailsPageProps> = () => {
 	/* Il récupère l'identifiant du logement actuel à partir de l'url puis filtre les données pour obtenir
@@ -30,6 +32,7 @@ const DetailsPage: FC<DetailsPageProps> = () => {
 			if (i < currentRate) {
 				stars.push(
 					<FontAwesomeIcon
+						key={i}
 						icon={faStar}
 						className={styles.StarYellow}
 					/>
@@ -37,6 +40,7 @@ const DetailsPage: FC<DetailsPageProps> = () => {
 			} else {
 				stars.push(
 					<FontAwesomeIcon
+						key={i}
 						icon={faStar}
 						className={styles.StarEmpty}
 					/>
@@ -57,7 +61,7 @@ const DetailsPage: FC<DetailsPageProps> = () => {
 					</div>
 					<div className={styles.logement_tags}>
 						{e.tags.map((e) => (
-							<p key={e.toString()}>{e}</p>
+							<p key={e}>{e}</p>
 						))}
 					</div>
 				</div>
@@ -70,7 +74,7 @@ const DetailsPage: FC<DetailsPageProps> = () => {
 						/>
 					</div>
 					<div className={styles.logement_rates}>
-						<p>{stars()}</p>
+						<p key={e.rating}>{stars()}</p>
 					</div>
 				</div>
 			</section>
