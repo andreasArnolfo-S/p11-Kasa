@@ -32,8 +32,8 @@ const Collapse: FC<CollapseProps> = (e) => {
 				className={styles.contentCollapsible}
 				style={
 					isActive
-						? { display: "none" }
-						: { display: "block" }
+						? { display: "block" }
+						: { display: "none" }
 				}
 			>
 				<p>{e.t === 'Equipements' ? e.equipments!.map((el) => <li key={el}>{el}</li>) : e.content}</p>

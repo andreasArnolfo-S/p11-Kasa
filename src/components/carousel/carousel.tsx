@@ -24,6 +24,13 @@ const Carousel: FC<CarouselProps> = (e) => {
   if (count > e.picture.length - 1) {
     setCount(0);
   }
+  if (e.picture.length === 1) {
+    return (
+      <div className={styles.Carousel}>
+        <img src={e.picture[0]} alt="carousel" />
+      </div>
+    );
+  }
 
 	return (
 		<div className={styles.Carousel}>
