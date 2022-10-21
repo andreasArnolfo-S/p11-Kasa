@@ -5,7 +5,7 @@ import { faStar } from '@fortawesome/free-solid-svg-icons';
 
 interface RatingProps {
   rate: string;
- }
+}
 
 const Rating: FC<RatingProps> = (props) => {
   const stars = () => {
@@ -36,7 +36,9 @@ const Rating: FC<RatingProps> = (props) => {
     return stars;
   };
   return (
-    <p key={props.rate}>{stars()}</p>
+    <div className={styles.logement_rates}>
+      <p key={props.rate}>{stars()}</p>
+    </div>
   );
 };
 export default Rating;

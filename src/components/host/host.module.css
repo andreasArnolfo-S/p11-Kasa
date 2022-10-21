@@ -1,0 +1,18 @@
+.Host {
+     display: flex;
+     align-items: center;
+     margin-top: 5%;
+}
+
+.Host p {
+     color: #FF6060;
+     font-size: 24px;
+     margin-right: 10px;
+
+}
+
+.Host img {
+     border-radius: 50%;
+     object-fit: cover;
+     width: 100px;
+}

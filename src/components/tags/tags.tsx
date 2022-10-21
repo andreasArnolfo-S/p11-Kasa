@@ -6,11 +6,11 @@ interface TagsProps {
 }
 
 const Tags: FC<TagsProps> = (props) => (
-<>
-  {props.tags.map((e) => (
-    <p className={styles.tag} key={e}>{e}</p>
-  ))}
-</>
+  <div className={styles.logement_tags}>
+    {props.tags.map((e) => (
+      <p className={styles.tag} key={e}>{e}</p>
+    ))}
+  </div>
 );
 
 export default Tags;

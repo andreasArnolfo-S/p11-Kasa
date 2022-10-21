@@ -17,39 +17,9 @@
      margin: 0;
 }
 
-.logement_profil {
-     display: flex;
-     align-items: center;
-     margin-top: 5%;
-}
 
-.logement_profil p {
-     color: #FF6060;
-     font-size: 24px;
-     margin-right: 10px;
 
-}
 
-.logement_profil img {
-     border-radius: 50%;
-     object-fit: cover;
-     width: 100px;
-}
-
-.logement_tags {
-     display: flex;
-     align-items: center;
-     gap: 10px;
-     margin-top: 5%;
-}
-.logement_tags p {
-     background-color: #FF6060;
-     color: #fff;
-     font-size: 18px;
-     margin: 0;
-     padding: 8px;
-     border-radius: 15px;
-}
 
 .logement_description {
      display: flex;
@@ -59,13 +29,7 @@
      width: 40% !important;
 }
 
-.logement_rates {
-     display: flex;
-     flex-direction: column;
-     align-items: flex-end;
-     width: 100%;
-     margin-top: 5%;
-}
+
 
 /* responsiv mobile */
 @media screen and (max-width: 480px) {

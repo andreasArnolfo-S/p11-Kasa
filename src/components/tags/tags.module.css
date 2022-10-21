@@ -1,3 +1,17 @@
+.logement_tags {
+     display: flex;
+     align-items: center;
+     gap: 10px;
+     margin-top: 5%;
+}
+.logement_tags p {
+     background-color: #FF6060;
+     color: #fff;
+     font-size: 18px;
+     margin: 0;
+     padding: 8px;
+     border-radius: 15px;
+}
 .tag {
      cursor: pointer;
 }
