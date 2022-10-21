@@ -5,12 +5,12 @@ import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 
 
 interface CollapseProps {
-	t?: string;
+	title?: string;
 	content?: string;
 	equipments?: string[];
 }
 
-const Collapse: FC<CollapseProps> = (e) => {
+const Collapse: FC<CollapseProps> = (props) => {
 	const [isActive, setActive] = useState(false);
 	/**
 	 * Si l'état actuel du composant est actif, définissez l'état sur inactif, et vice versa.
@@ -26,7 +26,7 @@ const Collapse: FC<CollapseProps> = (e) => {
 				onClick={toggleClass}
 				className={styles.collapsible}
 			>
-				{e.t} <FontAwesomeIcon className={styles.iconDown} icon={isActive ? faChevronDown : faChevronUp} />
+				{props.title} <FontAwesomeIcon className={styles.iconDown} icon={isActive ? faChevronDown : faChevronUp} />
 			</button>
 			<div
 				className={styles.contentCollapsible}
@@ -36,7 +36,7 @@ const Collapse: FC<CollapseProps> = (e) => {
 						: { display: "none" }
 				}
 			>
-				<p>{e.t === 'Equipements' ? e.equipments!.map((el) => <li key={el}>{el}</li>) : e.content}</p>
+				<p>{props.equipments ? props.equipments!.map((el) => <li key={el}>{el}</li>) : props.content}</p>
 			</div>
 		</div>
 	);

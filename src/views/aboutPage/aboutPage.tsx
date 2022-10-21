@@ -27,7 +27,7 @@ const AboutPage: FC<AboutPageProps> = () => {
   return (
     <div className={styles.AboutPage}>
       {listOfAboutTxt.map((e) => {
-        return <Collapse key={e.title} t={e.title} content={e.content} />
+        return <Collapse key={e.title} title={e.title} content={e.content} />
       })}
     </div>
   );

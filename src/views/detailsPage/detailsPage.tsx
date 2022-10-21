@@ -1,10 +1,10 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import styles from "./detailsPage.module.css";
-import { data } from "../../data/api";
 import Carousel from "../../components/carousel/carousel";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar } from "@fortawesome/free-solid-svg-icons";
 import Collapse from "../../components/collapse/collapse";
+import data from './../../data/data';
+import Rating from '../../components/rating/rating';
+import Tags from "../../components/tags/tags";
 
 interface DetailsPageProps {
 
@@ -18,38 +18,6 @@ const DetailsPage: FC<DetailsPageProps> = () => {
 	const e = currentLogement[0];
 
 
-	/**
-	 * Crée un tableau d'étoiles, où le nombre d'étoiles jaunes est égal à la note de l'hôte
-	 * @returns Un tableau de FontAwesomeIcons.
-	 */
-	const stars = () => {
-		const maxRate = 5;
-		const currentRate = parseInt(e.rating);
-
-		let stars = [];
-		/* C'est une boucle qui crée un nombre d'étoiles égal à la note de l'hôte. */
-		for (let i = 0; i < maxRate; i++) {
-			if (i < currentRate) {
-				stars.push(
-					<FontAwesomeIcon
-						key={i}
-						icon={faStar}
-						className={styles.StarYellow}
-					/>
-				);
-			} else {
-				stars.push(
-					<FontAwesomeIcon
-						key={i}
-						icon={faStar}
-						className={styles.StarEmpty}
-					/>
-				);
-			}
-		}
-		return stars;
-	};
-
 	return (
 		<div className={styles.DetailsPage}>
 			<Carousel picture={e.pictures} />
@@ -60,9 +28,7 @@ const DetailsPage: FC<DetailsPageProps> = () => {
 						<p>{e.location}</p>
 					</div>
 					<div className={styles.logement_tags}>
-						{e.tags.map((e) => (
-							<p key={e}>{e}</p>
-						))}
+						<Tags tags={e.tags} />
 					</div>
 				</div>
 				<div className={styles.logement_profil_and_rates}>
@@ -70,17 +36,17 @@ const DetailsPage: FC<DetailsPageProps> = () => {
 						<p>{e.host.name}</p>
 						<img
 							src={e.host.picture}
-							alt={e.host.name}
+							alt={'Photo de profile de' + e.host.name}
 						/>
 					</div>
 					<div className={styles.logement_rates}>
-						<p key={e.rating}>{stars()}</p>
+						<Rating rate={e.rating}/>
 					</div>
 				</div>
 			</section>
 			<section className={styles.logement_description}>
-				<Collapse t='Description' content={e.description} />
-				<Collapse t='Equipements' equipments={e.equipments} />
+				<Collapse title='Description' content={e.description} />
+				<Collapse title='Equipements' equipments={e.equipments} />
 			</section>
 		</div>
 	);

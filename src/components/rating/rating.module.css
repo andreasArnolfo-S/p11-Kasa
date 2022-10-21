@@ -1,0 +1,13 @@
+
+.StarYellow {
+     color: #FF6060;
+     font-size: 28px;
+     cursor: pointer;
+
+}
+.StarEmpty {
+     color: #464646;
+     opacity: 0.5;
+     font-size: 28px;
+     cursor: pointer;
+}

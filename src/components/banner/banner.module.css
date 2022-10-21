@@ -1,22 +1,34 @@
 .Banner {
-     background-size: cover;
-	background-position: center;
-     background-repeat: no-repeat;
-     background-attachment: fixed;
-	background-image: url("https://images.unsplash.com/photo-1650476899465-98b1c5604a23?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1746&q=80");
+	background-size: cover;
+	background-position:  15% 65%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 	margin: 2% 2% 0 2%;
 	border-radius: 30px;
 	height: 300px;
 	color: #fff;
 	position: relative;
+
+}
+.banner_infos {
+	background: #000000;
+	mix-blend-mode: darken;
+	opacity: 0.3;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border-radius: 30px;
 }
 .Banner h1 {
 	position: absolute;
 	top: 50%;
-     left: 50%;
-     transform: translate(-50%, -50%);
+	left: 50%;
+	transform: translate(-50%, -50%);
 	font-size: 48px;
-     margin: 0;
+	margin: 0;
+	color: #fff;
 }
 
 /* respondiv tablette */
@@ -40,8 +52,7 @@
 	}
 	.Banner h1 {
 		font-size: 28px;
-          left: 4%;
-          transform: translate(0, -50%);
-
+		left: 4%;
+		transform: translate(0, -50%);
 	}
 }

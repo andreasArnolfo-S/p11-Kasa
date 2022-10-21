@@ -1,11 +1,17 @@
 import React, { FC } from 'react';
 import styles from './banner.module.css';
 
-interface BannerProps {}
+interface BannerProps {
+  img: string;
+  txt?: string;
+}
 
-const Banner: FC<BannerProps> = () => (
-  <div className={styles.Banner}>
-    <h1>Chez vous, partout et ailleurs</h1>
+const Banner: FC<BannerProps> = (props) => (
+  <div className={styles.Banner} style={{backgroundImage: `url(${props.img})`}}>
+    <div className={styles.banner_infos}>
+    </div>
+    <h1>{props.txt ? props.txt : ""}</h1>
+
   </div>
 );
 

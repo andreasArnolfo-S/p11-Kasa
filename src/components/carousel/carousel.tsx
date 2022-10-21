@@ -6,7 +6,7 @@ interface CarouselProps {
 	picture: string[];
 }
 
-const Carousel: FC<CarouselProps> = (e) => {
+const Carousel: FC<CarouselProps> = (props) => {
   const [count, setCount] = useState(0);
 
   const next = (event: { preventDefault: () => void; }) => {
@@ -19,15 +19,21 @@ const Carousel: FC<CarouselProps> = (e) => {
   };
 
   if (count < 0) {
-    setCount(e.picture.length - 1);
+    setCount(props.picture.length - 1);
   }
-  if (count > e.picture.length - 1) {
+  if (count > props.picture.length - 1) {
     setCount(0);
   }
-  if (e.picture.length === 1) {
+  
+  /* C'est une condition qui vérifie si la longueur du tableau est égale à 1. Si c'est le cas, elle
+  renverra l'image sans 'suivant' et 'precedent' */
+  if (props.picture.length === 1) {
     return (
       <div className={styles.Carousel}>
-        <img src={e.picture[0]} alt="carousel" />
+        <img src={props.picture[0]} alt="carousel" />
+        <div className={styles.CarouselDots}>
+          <p>{ count + 1 }/{ props.picture.length }</p>
+        </div>
       </div>
     );
   }
@@ -36,7 +42,7 @@ const Carousel: FC<CarouselProps> = (e) => {
 		<div className={styles.Carousel}>
 			{/* Affichage de l'image actuellement sélectionnée. */}
       <div className={styles.CarouselSlide}>
-        <img src={e.picture[count]} alt="carousel" />
+        <img src={props.picture[count]} alt="carousel" />
 			</div>
       {/* boutons qui permettent de passer à l'image suivante ou précédente. */}
       <div className={styles.CarouselButtons}>
@@ -45,7 +51,7 @@ const Carousel: FC<CarouselProps> = (e) => {
       </div>
       {/* Affichage du numéro de la photo actuelle et du nombre total de photos. */}
       <div className={styles.CarouselDots}>
-        <p>{ count + 1 }/{ e.picture.length }</p>
+        <p>{ count + 1 }/{ props.picture.length }</p>
       </div>
 		</div>
 	);

@@ -50,18 +50,13 @@
      padding: 8px;
      border-radius: 15px;
 }
-.StarYellow {
-     color: #FF6060;
-     font-size: 28px;
 
-}
-.StarEmpty {
-     color: #464646;
-     opacity: 0.5;
-     font-size: 28px;
-}
 .logement_description {
      display: flex;
+}
+
+.logement_description::nth-child(1) {
+     width: 40% !important;
 }
 
 .logement_rates {
