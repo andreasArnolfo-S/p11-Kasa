@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import styles from "./detailsPage.module.css";
 import Carousel from "../../components/carousel/carousel";
 import Collapse from "../../components/collapse/collapse";
@@ -6,15 +6,22 @@ import data from './../../data/data';
 import Rating from '../../components/rating/rating';
 import Tags from "../../components/tags/tags";
 import Host from '../../components/host/host';
+import Api from "../../data/api";
 
 interface DetailsPageProps {
 
 }
 
 const DetailsPage: FC<DetailsPageProps> = () => {
+	const currentId = window.location.pathname.split("/")[2];
+	const [logements] = Api();
+	console.log(logements);
+	
+
+
+	
 	/* Il récupère l'identifiant du logement actuel à partir de l'url puis filtre les données pour obtenir
 	le logement actuel. */
-	const currentId = window.location.pathname.split("/")[2];
 	const currentLogement = data.filter((e) => e.id === currentId);
 	const logement = currentLogement[0];
 
