@@ -1,8 +1,13 @@
+import { FC } from "react";
 import DetailsPage from "../detailsPage/detailsPage";
 
-const Detail = () => (
+interface DetailsProps {
+     data: [] | any[];
+}
+
+const Detail: FC<DetailsProps> = (props) => (
      <>
-          <DetailsPage />
+          <DetailsPage data={props.data} />
      </>
 )
 

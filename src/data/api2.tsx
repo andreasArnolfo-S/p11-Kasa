@@ -2,25 +2,18 @@
 import { useState, useEffect } from 'react';
 
 const Apideux = () => {
-     const [data, setData] = useState([]);
+     const url = 'location.json';
+     const [logements, setLogements] = useState<any[]>([]);
 
      useEffect(() => {
-          const url = './location.json';
-
-          const fetchData = async () => {
-               try {
-                    const response = await fetch(url);
-                    const json = await response.json();
-                    setData(json);
-               } catch (error) {
-                    console.log('error', error);
-               }
-          };
-          fetchData();
+          fetch(url)
+               .then((res) => res.json())
+               .then((data) => {
+                    setLogements(data);
+               })
      }, []);
 
-     return [data];
-
+     return [logements];
 }
 
 export default Apideux;

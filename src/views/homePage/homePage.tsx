@@ -1,19 +1,15 @@
 import styles from './homePage.module.css';
 import Card from '../../components/card/card';
-// import data from '../../data/data';
-import Api from '../../data/api';
-import Apideux from '../../data/api2';
+import { FC } from 'react';
 
-const HomePage = () => {
-  const [logements] = Api();
+interface HomePageProps {
+  data: [] | any[];
+}
 
-  const [data] = Apideux();
-  console.log(data);
-  
-
+const HomePage: FC<HomePageProps> = (props) => {
   return (
     <div className={styles.HomePage}>
-      {logements.map((e) => <Card key={e.id} {...e} />)}
+      {props.data.map((e) => <Card key={e.id} {...e} />)}
     </div>
   );
 };
