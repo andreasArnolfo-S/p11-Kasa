@@ -3,10 +3,10 @@ import Home from './pages/home';
 import About from './pages/about';
 import Error from './pages/error';
 import Detail from './pages/details';
-import Apideux from '../data/api2';
+import Api from '../data/api';
 
 const Router = () => {
-  const [logements] = Apideux();
+  const [logements] = Api();
   
   return (
     <>

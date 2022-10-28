@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from 'react';
 
-const Apideux = () => {
+const Api = () => {
      const url = 'location.json';
      const [logements, setLogements] = useState<any[]>([]);
 
@@ -16,4 +16,4 @@ const Apideux = () => {
      return [logements];
 }
 
-export default Apideux;
+export default Api;
