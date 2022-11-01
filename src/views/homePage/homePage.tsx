@@ -1,15 +1,13 @@
 import styles from './homePage.module.css';
 import Card from '../../components/card/card';
-import { FC } from 'react';
+import useApi from './../../data/api';
 
-interface HomePageProps {
-  data: [] | any[];
-}
 
-const HomePage: FC<HomePageProps> = (props) => {
+const HomePage = (props:any) => {
+  
   return (
     <div className={styles.HomePage}>
-      {props.data.map((e) => <Card key={e.id} {...e} />)}
+      {props.data.map((e:any) => <Card key={e.id} {...e} />)}
     </div>
   );
 };

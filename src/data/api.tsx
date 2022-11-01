@@ -1,8 +1,9 @@
 
 import { useState, useEffect } from 'react';
 
-const Api = () => {
-     const url = 'location.json';
+
+const useApi = (url: string) => {
+     // const url = '../location.json';
      const [logements, setLogements] = useState<any[]>([]);
 
      useEffect(() => {
@@ -13,7 +14,7 @@ const Api = () => {
                })
      }, []);
 
-     return [logements];
+     return logements;
 }
 
-export default Api;
+export default useApi;

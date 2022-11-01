@@ -1,20 +1,22 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import styles from "./detailsPage.module.css";
 import Carousel from "../../components/carousel/carousel";
 import Collapse from "../../components/collapse/collapse";
 import Rating from '../../components/rating/rating';
 import Tags from "../../components/tags/tags";
 import Host from '../../components/host/host';
+import useApi from "../../data/api";
 
-interface DetailsPageProps {
-	data: [] | any[];
-}
 
-const DetailsPage: FC<DetailsPageProps> = (props) => {
+const DetailsPage = (props: any) => {
+	
 	const currentId = window.location.pathname.split("/")[2];
-	const currentLogement = props.data.filter((e) => e.id === currentId);
+	const currentLogement = props.data.filter((e:any) => e.id === currentId);
 	const logement = currentLogement[0];
+	console.log(props);
+	
 
+	
 	return (
 		<div className={styles.DetailsPage}>
 			<Carousel picture={logement.pictures} />

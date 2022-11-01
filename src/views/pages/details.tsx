@@ -1,14 +1,15 @@
 import { FC } from "react";
 import DetailsPage from "../detailsPage/detailsPage";
+import useApi from './../../data/api';
 
-interface DetailsProps {
-     data: [] | any[];
+
+const Detail = () => {
+     const logements = useApi('../location.json');
+     return (
+          <>
+               <DetailsPage data={logements} />
+          </>
+     )
 }
-
-const Detail: FC<DetailsProps> = (props) => (
-     <>
-          <DetailsPage data={props.data} />
-     </>
-)
 
 export default Detail;
