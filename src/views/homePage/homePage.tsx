@@ -1,6 +1,5 @@
 import styles from './homePage.module.css';
 import Card from '../../components/card/card';
-import useApi from './../../data/api';
 
 
 const HomePage = (props:any) => {

@@ -7,13 +7,14 @@ const useApi = (url: string) => {
      const [logements, setLogements] = useState<any[]>([]);
 
      useEffect(() => {
-          fetch(url)
-               .then((res) => res.json())
-               .then((data) => {
-                    setLogements(data);
-               })
-     }, []);
-
+          const fetchData = async () => {
+               const response = await fetch(url);
+               const data = await response.json();
+               setLogements(data);
+          }
+          fetchData();
+     }, [url]);
+     
      return logements;
 }
 

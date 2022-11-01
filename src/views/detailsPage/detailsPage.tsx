@@ -1,11 +1,10 @@
-import { FC, useState } from "react";
 import styles from "./detailsPage.module.css";
 import Carousel from "../../components/carousel/carousel";
 import Collapse from "../../components/collapse/collapse";
 import Rating from '../../components/rating/rating';
 import Tags from "../../components/tags/tags";
 import Host from '../../components/host/host';
-import useApi from "../../data/api";
+
 
 
 const DetailsPage = (props: any) => {
@@ -13,14 +12,13 @@ const DetailsPage = (props: any) => {
 	const currentId = window.location.pathname.split("/")[2];
 	const currentLogement = props.data.filter((e:any) => e.id === currentId);
 	const logement = currentLogement[0];
-	console.log(props);
 	
 
-	
 	return (
 		<div className={styles.DetailsPage}>
-			<Carousel picture={logement.pictures} />
-			<section className={styles.logement_infos}>
+			<Carousel picture={logement?.pictures} />
+			{logement && <>
+			 <section className={styles.logement_infos}>
 				<div className={styles.logement_info_title_and_tags}>
 					<div className={styles.logement_info_title}>
 						<h1>{logement.title}</h1>
@@ -37,6 +35,7 @@ const DetailsPage = (props: any) => {
 				<Collapse title='Description' content={logement.description} />
 				<Collapse title='Equipements' equipments={logement.equipments} />
 			</section>
+			</>} 
 		</div>
 	);
 };
