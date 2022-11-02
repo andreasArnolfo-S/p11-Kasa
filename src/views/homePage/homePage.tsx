@@ -9,5 +9,6 @@ const HomePage = (props:any) => {
       {props.data.map((e:any) => <Card key={e.id} {...e} />)}
     </div>
   );
+  
 };
 export default HomePage;

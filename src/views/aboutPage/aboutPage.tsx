@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import styles from './aboutPage.module.css';
 import Collapse from './../../components/collapse/collapse';
 
