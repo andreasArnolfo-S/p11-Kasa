@@ -37,9 +37,13 @@
 		margin-top: 0;
 		height: 130px;
 		border-radius: 15px;
+		background-attachment: initial;
 	}
 	.Banner h1 {
 		font-size: 36px;
+	}
+	.banner_infos {
+		border-radius: 15px;
 	}
 }
 
@@ -49,6 +53,7 @@
 		margin-top: 0;
 		height: 130px;
 		border-radius: 15px;
+		background-attachment: initial;
 	}
 	.Banner h1 {
 		font-size: 28px;
